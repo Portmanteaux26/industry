@@ -1,6 +1,5 @@
 import os
 import statistics
-import msvcrt
 import sys
 import math
 import random
@@ -70,7 +69,7 @@ class Menu:
                   "3. Plant spawn",
                   "4. Confirm orders",
                   "0. Quit game\n", sep = '\n')
-            order = msvcrt.getwch()
+            order = input()
             match order:
                 case '1': self.order_plots()
                 case '2': self.order_biscuits()
@@ -117,8 +116,8 @@ class Menu:
         self.mushrooms_available -= self.plots_ordered * self.plot_price
         self.plots_available += self.plots_ordered
         if self.is_legal():
-            print(f"We will {"buy" * (self.plots_ordered >= 0)}",
-                  f"{"sell" * (self.plots_ordered < 0)} ",
+            print(f"We will {'buy' * (self.plots_ordered >= 0)}",
+                  f"{'sell' * (self.plots_ordered < 0)} ",
                   f"{abs(self.plots_ordered)} plot",
                   f"{'s' * (abs(self.plots_ordered) != 1)} this season.",
                   sep = '')
@@ -174,8 +173,8 @@ class Menu:
             print(f"Plant {self.spawn_ordered} spawn")
         print(f"Store {self.mushrooms_available} mushrooms")
         print("\n1. Confirm\n2. Change")
-        confirmation = msvcrt.getwch()
-        if confirmation == '1':
+        confirmation = input()
+        if confirmation == '1':1
             fort.plots += self.plots_ordered
             fort.biscuits = self.biscuits_ordered
             fort.spawn = self.spawn_ordered
