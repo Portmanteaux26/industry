@@ -36,11 +36,11 @@ class Report:
             print("Your middling management stymies fortress growth, but the",
                   "Mountainhome begrudingly offers you barony status.\n")
         elif mortality_rate > 0.03 or plots_per_dwarf < 10:
-            print("Your commendable management lets the fortress grow, and",
+            print("The fortress grows under your commendable management, and",
                   "the Mountainhome offers you county status.\n")
         else:
-            print("Your superdwarvenly management allows the fortress to",
-                  "flourish, and the Mountainhome offers you duchy status",
+            print("The fortress flourishes under your superdwarvenly",
+                  "management, and the Mountainhome offers you duchy status",
                   "with much fanfare!\n")
         input("Press any key to exit.\n")
 
