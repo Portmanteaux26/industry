@@ -161,20 +161,17 @@ class Menu:
     def confirm_orders(self, fort, report):
         report.new_page(fort)
         print("We are ready to carry out your orders:\n")
-        if self.plots_ordered != 0:
-            print(f"{'Buy' * (self.plots_ordered >= 0)}",
-                  f"{'Sell' * (self.plots_ordered < 0)} ",
-                  f"{abs(self.plots_ordered)} plot",
-                  f"{'s' * (abs(self.plots_ordered) != 1)}", sep = '')
-        if self.biscuits_ordered > 0:
-            print(f"Make {self.biscuits_ordered}",
-                  f"biscuit{'s' * (self.biscuits_ordered != 0)}")
-        if self.spawn_ordered > 0:
-            print(f"Plant {self.spawn_ordered} spawn")
+        print(f"{'Buy' * (self.plots_ordered >= 0)}",
+              f"{'Sell' * (self.plots_ordered < 0)} ",
+              f"{abs(self.plots_ordered)} plot",
+              f"{'s' * (abs(self.plots_ordered) != 1)}", sep = '')
+        print(f"Make {self.biscuits_ordered}",
+              f"biscuit{'s' * (self.biscuits_ordered != 0)}")
+        print(f"Plant {self.spawn_ordered} spawn")
         print(f"Store {self.mushrooms_available} mushrooms")
         print("\n1. Confirm\n2. Change")
         confirmation = input()
-        if confirmation == '1':1
+        if confirmation == '1': 
             fort.plots += self.plots_ordered
             fort.biscuits = self.biscuits_ordered
             fort.spawn = self.spawn_ordered
